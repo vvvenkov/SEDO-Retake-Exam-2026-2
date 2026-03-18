@@ -1,0 +1,226 @@
+Started by user venelin
+Connecting to https://api.github.com using vvvenkov/******
+Obtained JenkinsFIle from 321543e986fba2f5e710dd0483731647109abe38
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: NONE
+using credential 6a9d9990-2e64-440d-98d1-af0609203c70
+Cloning the remote Git repository
+Cloning with configured refspecs honoured and without tags
+Cloning repository https://github.com/vvvenkov/SEDO-Retake-Exam-2026-2.git
+ > git.exe init C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main # timeout=10
+Fetching upstream changes from https://github.com/vvvenkov/SEDO-Retake-Exam-2026-2.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.52.0.windows.1'
+using GIT_ASKPASS to set credentials 
+ > git.exe fetch --no-tags --force --progress -- https://github.com/vvvenkov/SEDO-Retake-Exam-2026-2.git +refs/heads/main:refs/remotes/origin/main # timeout=10
+ > git.exe config remote.origin.url https://github.com/vvvenkov/SEDO-Retake-Exam-2026-2.git # timeout=10
+ > git.exe config --add remote.origin.fetch +refs/heads/main:refs/remotes/origin/main # timeout=10
+Avoid second fetch
+Checking out Revision 321543e986fba2f5e710dd0483731647109abe38 (main)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 321543e986fba2f5e710dd0483731647109abe38 # timeout=10
+Commit message: "fix jenkins file"
+First time build. Skipping changelog.
+
+Could not update commit status. Message: {
+	"message": "API rate limit exceeded for 88.90.177.153. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID F15C:33C564:15FD5E8:13072D7:69BA71E6 and timestamp 2026-03-18 09:35:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
+	"status": "403"
+}
+
+
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Restore dependencies)
+[Pipeline] bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main>dotnet restore 
+
+Welcome to .NET 10.0!
+---------------------
+SDK Version: 10.0.103
+
+Telemetry
+---------
+The .NET tools collect usage data in order to help us improve your experience. It is collected by Microsoft and shared with the community. You can opt-out of telemetry by setting the DOTNET_CLI_TELEMETRY_OPTOUT environment variable to '1' or 'true' using your favorite shell.
+
+Read more about .NET CLI Tools telemetry: https://aka.ms/dotnet-cli-telemetry
+
+----------------
+Installed an ASP.NET Core HTTPS development certificate.
+To trust the certificate, run 'dotnet dev-certs https --trust'
+Learn about HTTPS: https://aka.ms/dotnet-https
+
+----------------
+Write your first app: https://aka.ms/dotnet-hello-world
+Find out what's new: https://aka.ms/dotnet-whats-new
+Explore documentation: https://aka.ms/dotnet-docs
+Report issues and find source on GitHub: https://github.com/dotnet/core
+Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cli
+--------------------------------------------------------------------------------------
+  Determining projects to restore...
+C:\Program Files\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.EolTargetFrameworks.targets(32,5): warning NETSDK1138: The target framework 'net6.0' is out of support and will not receive security updates in the future. Please refer to https://aka.ms/dotnet-core-support for more information about the support policy. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+  Restored C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Data\Homies.Data.csproj (in 13.37 sec).
+  Restored C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\Homies.Tests.csproj (in 22.57 sec).
+  Restored C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj (in 22.57 sec).
+  Restored C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj (in 22.57 sec).
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build the app)
+[Pipeline] bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main>dotnet build --no-restore 
+C:\Program Files\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.EolTargetFrameworks.targets(32,5): warning NETSDK1138: The target framework 'net6.0' is out of support and will not receive security updates in the future. Please refer to https://aka.ms/dotnet-core-support for more information about the support policy. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Data\Data\HomiesDbContext.cs(10,16): warning CS8618: Non-nullable property 'Types' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Data\Homies.Data.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Data\Data\HomiesDbContext.cs(10,16): warning CS8618: Non-nullable property 'Events' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Data\Homies.Data.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Data\Data\HomiesDbContext.cs(10,16): warning CS8618: Non-nullable property 'EventsParticipants' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Data\Homies.Data.csproj]
+  Homies.Data -> C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Data\bin\Debug\net6.0\Homies.Data.dll
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Data\HomiesDbContext.cs(10,16): warning CS8618: Non-nullable property 'Types' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Data\HomiesDbContext.cs(10,16): warning CS8618: Non-nullable property 'Events' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Data\HomiesDbContext.cs(10,16): warning CS8618: Non-nullable property 'EventsParticipants' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Views\Shared\_Layout.cshtml(26,30): warning CS8602: Dereference of a possibly null reference. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Views\Event\Details.cshtml(23,14): warning CS8602: Dereference of a possibly null reference. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Controllers\EventController.cs(125,45): warning CS8604: Possible null reference argument for parameter 'entity' in 'EntityEntry<EventParticipant> DbSet<EventParticipant>.Remove(EventParticipant entity)'. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Controllers\EventController.cs(119,17): warning CS8073: The result of the expression is always 'false' since a value of type 'ValueTask<Event?>' is never equal to 'null' of type 'ValueTask<Event?>?' [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Views\Event\All.cshtml(22,18): warning CS8602: Dereference of a possibly null reference. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Views\Event\Joined.cshtml(21,18): warning CS8602: Dereference of a possibly null reference. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+  Homies -> C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\bin\Debug\net6.0\Homies.dll
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\EventControllerUnitTests.cs(111,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\Homies.Tests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\EventControllerUnitTests.cs(90,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\Homies.Tests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\EventControllerUnitTests.cs(144,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\Homies.Tests.csproj]
+  Homies.Tests -> C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\bin\Debug\net6.0\Homies.Tests.dll
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(117,45): warning CS8602: Dereference of a possibly null reference. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(77,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(80,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(81,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(114,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(117,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(118,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(142,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(145,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(146,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(147,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(178,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(181,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(215,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(216,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+  Homies.IntegrationTests -> C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\bin\Debug\net6.0\Homies.IntegrationTests.dll
+
+Build succeeded.
+
+C:\Program Files\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.EolTargetFrameworks.targets(32,5): warning NETSDK1138: The target framework 'net6.0' is out of support and will not receive security updates in the future. Please refer to https://aka.ms/dotnet-core-support for more information about the support policy. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Data\Data\HomiesDbContext.cs(10,16): warning CS8618: Non-nullable property 'Types' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Data\Homies.Data.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Data\Data\HomiesDbContext.cs(10,16): warning CS8618: Non-nullable property 'Events' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Data\Homies.Data.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Data\Data\HomiesDbContext.cs(10,16): warning CS8618: Non-nullable property 'EventsParticipants' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Data\Homies.Data.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Data\HomiesDbContext.cs(10,16): warning CS8618: Non-nullable property 'Types' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Data\HomiesDbContext.cs(10,16): warning CS8618: Non-nullable property 'Events' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Data\HomiesDbContext.cs(10,16): warning CS8618: Non-nullable property 'EventsParticipants' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Views\Shared\_Layout.cshtml(26,30): warning CS8602: Dereference of a possibly null reference. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Views\Event\Details.cshtml(23,14): warning CS8602: Dereference of a possibly null reference. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Controllers\EventController.cs(125,45): warning CS8604: Possible null reference argument for parameter 'entity' in 'EntityEntry<EventParticipant> DbSet<EventParticipant>.Remove(EventParticipant entity)'. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Controllers\EventController.cs(119,17): warning CS8073: The result of the expression is always 'false' since a value of type 'ValueTask<Event?>' is never equal to 'null' of type 'ValueTask<Event?>?' [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Views\Event\All.cshtml(22,18): warning CS8602: Dereference of a possibly null reference. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Views\Event\Joined.cshtml(21,18): warning CS8602: Dereference of a possibly null reference. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies\Homies.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\EventControllerUnitTests.cs(111,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\Homies.Tests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\EventControllerUnitTests.cs(90,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\Homies.Tests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\EventControllerUnitTests.cs(144,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\Homies.Tests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(117,45): warning CS8602: Dereference of a possibly null reference. [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(77,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(80,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(81,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(114,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(117,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(118,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(142,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(145,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(146,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(147,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(178,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(181,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(215,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\EventControllerIntegrationTests.cs(216,13): warning NUnit2005: Consider using the constraint model, Assert.That(actual, Is.EqualTo(expected)), instead of the classic model, Assert.AreEqual(expected, actual) (https://github.com/nunit/nunit.analyzers/tree/master/documentation/NUnit2005.md) [C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\Homies.IntegrationTests.csproj]
+    31 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:06.86
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Run the tests)
+[Pipeline] bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main>dotnet test --no-build --verbosity normal 
+Build started 3/18/2026 10:36:10 AM.
+     1>Project "C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.sln" on node 1 (VSTest target(s)).
+     1>ValidateSolutionConfiguration:
+         Building solution configuration "Debug|Any CPU".
+Test run for C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\bin\Debug\net6.0\Homies.Tests.dll (.NETCoreApp,Version=v6.0)
+VSTest version 18.0.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Test run for C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\bin\Debug\net6.0\Homies.IntegrationTests.dll (.NETCoreApp,Version=v6.0)
+VSTest version 18.0.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+NUnit Adapter 4.4.0.0: Test execution started
+Running all tests in C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.Tests\bin\Debug\net6.0\Homies.Tests.dll
+NUnit Adapter 4.4.0.0: Test execution started
+Running all tests in C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.IntegrationTests\bin\Debug\net6.0\Homies.IntegrationTests.dll
+   NUnit3TestExecutor discovered 4 of 4 NUnit test cases using Current Discovery mode, Non-Explicit run
+   NUnit3TestExecutor discovered 5 of 5 NUnit test cases using Current Discovery mode, Non-Explicit run
+NUnit Adapter 4.4.0.0: Test execution complete
+  Passed Add_Get_ShouldReturnViewWithEventFormModel [1 s]
+  Passed Add_Post_InvalidModel_ShouldReturnViewWithModel [133 ms]
+  Passed Add_Post_ValidModel_ShouldRedirectToAll [72 ms]
+  Passed Edit_Post_ValidModel_ShouldRedirectToAll [9 ms]
+
+Test Run Successful.
+Total tests: 4
+     Passed: 4
+ Total time: 3.6285 Seconds
+NUnit Adapter 4.4.0.0: Test execution complete
+  Passed AddEvent_ShouldInsertEventIntoDatabase [1 s]
+  Passed EditEvent_ShouldUpdateEventInDatabase [36 ms]
+  Passed Joined_ShouldReturnUserJoinedEvents [105 ms]
+  Passed JoinEvent_ShouldAddParticipantToDatabase [17 ms]
+  Passed LeaveEvent_ShouldRemoveParticipantFromDatabase [16 ms]
+
+Test Run Successful.
+Total tests: 5
+     Passed: 5
+ Total time: 3.7454 Seconds
+     1>Done Building Project "C:\ProgramData\Jenkins\.jenkins\workspace\dev-ops-retake-exam_main\Homies.sln" (VSTest target(s)).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:05.04
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+
+Could not update commit status. Message: {
+	"message": "API rate limit exceeded for 88.90.177.153. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID F15C:33C564:1613173:131A53A:69BA71F5 and timestamp 2026-03-18 09:36:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
+	"status": "403"
+}
+
+
+Finished: SUCCESS
